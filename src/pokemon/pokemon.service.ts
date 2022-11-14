@@ -73,9 +73,13 @@ export class PokemonService {
 
   async remove(term: string) {
     const pokemon = await this.findOne(term);
+    return pokemon.deleteOne();
 
-    const pokemonId = pokemon._id;
-    return pokemon.deleteOne(pokemonId);
+    //Otras formas de  eliminar un registro
+    // 1.-Forma
+    //const pokemonId = pokemon._id;
+    //return pokemon.deleteOne(pokemonId);
+    // 2.-Forma
     //return this.pokemonModel.deleteOne({ _id: term });
   }
 }
