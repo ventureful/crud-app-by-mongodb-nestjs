@@ -76,5 +76,6 @@ export class PokemonService {
 
     const pokemonId = pokemon._id;
     return pokemon.deleteOne(pokemonId);
+    //return this.pokemonModel.deleteOne({ _id: term });
   }
 }
