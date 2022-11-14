@@ -72,22 +72,22 @@ export class PokemonService {
   }
 
   async remove(term: string) {
-    //eliminar registro(documento) por cualquier campo("name" o "no")
-
+    //eliminar registro(documento) por cualquier campo("name" , "no" o "_id")
     const pokemon = await this.findOne(term);
-    console.log('remove', pokemon);
+
     return pokemon.deleteOne();
 
     //Otras formas de  eliminar un registro
 
-    // 1.-Forma. Eliminar por cualquier campo("name" o "no")
+    // 1.-Forma. Eliminar por cualquier campo("name" o "no" o "_id")
+    //const pokemon = await this.findOne(term);
     //const pokemonId = pokemon._id;
     //return pokemon.deleteOne(pokemonId);
 
-    // 2.-Forma ,solamente vale para el campo _id de mongodb.
+    // 2.-Forma ,solamente vale para el campo _id de pokemen.
     //return this.pokemonModel.deleteOne({ _id: term });
 
-    // 3.-Forma. solamente fale para el campo _id de mongodb.
+    // 3.-Forma. solamente vale para el campo _id de pokemon.
     //return this.pokemonModel.findByIdAndDelete({ _id: term });
   }
 }
